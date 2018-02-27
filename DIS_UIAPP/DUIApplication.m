@@ -227,5 +227,32 @@ int DUIApplicationMain(int argc, char **  argv, NSString *  principalClassName, 
 
 @implementation DUIApplication
 
+- (UIEvent *)_event {
+    return _event;
+}
+
+- (void)sendEvent:(UIEvent *)event {
+    GSEventRef gsevent = [event _gsEvent];
+    if(![self handleEvent:gsevent withNewEvent:event]) {
+        return;
+    }
+    
+    _applicationFlags.isResigningActive = NO;
+    if (_eventDispatcher.mainEnvironment.eventWantsLowLatency) {
+        [CATransaction setLowLatency:YES];
+    }
+    //loc_420D9
+    NSArray *windows = [event _windows];
+    for (UIWindow *window in windows) {
+        [window sendEvent:event];
+    }
+    //loc_421BD
+    if ([self _pressesEvent] == event) {
+        if (_UIPressesContainsPressType(event.allPresses, 5) && !_applicationFlags.receivedUnhandledMenuButton) {
+            [self _sendEventToGameControllerObserver:[event _hidEvent]];
+        }
+    }
+}
+
 @end
 
