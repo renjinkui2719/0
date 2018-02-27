@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		912323F520428D8D001CA679 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 912323F420428D8D001CA679 /* AppDelegate.m */; };
+		912323F820428D8D001CA679 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 912323F720428D8D001CA679 /* ViewController.m */; };
+		912323FB20428D8D001CA679 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912323F920428D8D001CA679 /* Main.storyboard */; };
+		912323FD20428D8E001CA679 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 912323FC20428D8E001CA679 /* Assets.xcassets */; };
+		9123240020428D8E001CA679 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912323FE20428D8E001CA679 /* LaunchScreen.storyboard */; };
+		9123240320428D8E001CA679 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9123240220428D8E001CA679 /* main.m */; };
+		9123240B204297B4001CA679 /* DUIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 9123240A204297B4001CA679 /* DUIApplication.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		912323F020428D8D001CA679 /* DIS_UIAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIS_UIAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		912323F320428D8D001CA679 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		912323F420428D8D001CA679 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		912323F620428D8D001CA679 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		912323F720428D8D001CA679 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		912323FA20428D8D001CA679 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		912323FC20428D8E001CA679 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		912323FF20428D8E001CA679 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9123240120428D8E001CA679 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9123240220428D8E001CA679 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		91232409204297B4001CA679 /* DUIApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUIApplication.h; sourceTree = "<group>"; };
+		9123240A204297B4001CA679 /* DUIApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DUIApplication.m; sourceTree = "<group>"; };
+		9198080520440AD600A4B973 /* BKSApplicationStateMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSApplicationStateMonitor.h; sourceTree = "<group>"; };
+		9198080620440AD600A4B973 /* BKSProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSProcess.h; sourceTree = "<group>"; };
+		9198080720440AD600A4B973 /* BKSProcessAssertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSProcessAssertion.h; sourceTree = "<group>"; };
+		9198080820440AD600A4B973 /* BKSProcessAssertionClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSProcessAssertionClient.h; sourceTree = "<group>"; };
+		9198080920440AD600A4B973 /* BKSProcessAssertionCreateEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSProcessAssertionCreateEvent.h; sourceTree = "<group>"; };
+		9198080A20440AD600A4B973 /* BKSProcessAssertionCreateResponseEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSProcessAssertionCreateResponseEvent.h; sourceTree = "<group>"; };
+		9198080B20440AD600A4B973 /* BKSProcessAssertionDestroyEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSProcessAssertionDestroyEvent.h; sourceTree = "<group>"; };
+		9198080C20440AD600A4B973 /* BKSProcessAssertionEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSProcessAssertionEvent.h; sourceTree = "<group>"; };
+		9198080D20440AD600A4B973 /* BKSProcessAssertionUpdateEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSProcessAssertionUpdateEvent.h; sourceTree = "<group>"; };
+		9198080F20440AD600A4B973 /* GraphicsServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsServices.h; sourceTree = "<group>"; };
+		9198081020440AD600A4B973 /* GSBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSBase.h; sourceTree = "<group>"; };
+		9198081120440AD600A4B973 /* GSCapability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSCapability.h; sourceTree = "<group>"; };
+		9198081220440AD600A4B973 /* GSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSColor.h; sourceTree = "<group>"; };
+		9198081320440AD600A4B973 /* GSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSEvent.h; sourceTree = "<group>"; };
+		9198081420440AD600A4B973 /* GSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSFont.h; sourceTree = "<group>"; };
+		9198081520440AD600A4B973 /* GSGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSGeometry.h; sourceTree = "<group>"; };
+		9198081620440AD600A4B973 /* GSHeartbeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHeartbeat.h; sourceTree = "<group>"; };
+		9198081720440AD600A4B973 /* GSHiccup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHiccup.h; sourceTree = "<group>"; };
+		9198081820440AD600A4B973 /* GSKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSKeyboard.h; sourceTree = "<group>"; };
+		9198081920440AD600A4B973 /* GSMainScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMainScreen.h; sourceTree = "<group>"; };
+		9198081A20440AD600A4B973 /* GSMaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMaps.h; sourceTree = "<group>"; };
+		9198081B20440AD600A4B973 /* GSStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSStatusBar.h; sourceTree = "<group>"; };
+		9198081C20440AD600A4B973 /* GSWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSWindow.h; sourceTree = "<group>"; };
+		9198081F20440AD600A4B973 /* IOHIDDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDDisplay.h; sourceTree = "<group>"; };
+		9198082020440AD600A4B973 /* IOHIDEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEvent.h; sourceTree = "<group>"; };
+		9198082120440AD600A4B973 /* IOHIDEventData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventData.h; sourceTree = "<group>"; };
+		9198082220440AD600A4B973 /* IOHIDEventQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventQueue.h; sourceTree = "<group>"; };
+		9198082320440AD600A4B973 /* IOHIDEventSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventSystem.h; sourceTree = "<group>"; };
+		9198082420440AD600A4B973 /* IOHIDEventSystemClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventSystemClient.h; sourceTree = "<group>"; };
+		9198082520440AD600A4B973 /* IOHIDEventTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventTypes.h; sourceTree = "<group>"; };
+		9198082620440AD600A4B973 /* IOHIDNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDNotification.h; sourceTree = "<group>"; };
+		9198082720440AD600A4B973 /* IOHIDService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDService.h; sourceTree = "<group>"; };
+		9198082820440AD600A4B973 /* IOHIDSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDSession.h; sourceTree = "<group>"; };
+		9198082920440AD600A4B973 /* IOHIDUserDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDUserDevice.h; sourceTree = "<group>"; };
+		9198082A20440AD600A4B973 /* IOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOKit.h; sourceTree = "<group>"; };
+		9198082B20440AD600A4B973 /* IOKitKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOKitKeys.h; sourceTree = "<group>"; };
+		9198082C20440AD600A4B973 /* IOKitLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOKitLib.h; sourceTree = "<group>"; };
+		9198082D20440AD600A4B973 /* IOReturn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOReturn.h; sourceTree = "<group>"; };
+		9198082E20440AD600A4B973 /* IOTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOTypes.h; sourceTree = "<group>"; };
+		9198082F20440AD600A4B973 /* OSKext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKext.h; sourceTree = "<group>"; };
+		9198083020440AD600A4B973 /* OSMessageNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSMessageNotification.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		912323ED20428D8D001CA679 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		912323E720428D8D001CA679 = {
+			isa = PBXGroup;
+			children = (
+				912323F220428D8D001CA679 /* DIS_UIAPP */,
+				912323F120428D8D001CA679 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		912323F120428D8D001CA679 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				912323F020428D8D001CA679 /* DIS_UIAPP.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		912323F220428D8D001CA679 /* DIS_UIAPP */ = {
+			isa = PBXGroup;
+			children = (
+				91232409204297B4001CA679 /* DUIApplication.h */,
+				9123240A204297B4001CA679 /* DUIApplication.m */,
+				9198080320440AD600A4B973 /* PrivateFramework */,
+				912323F320428D8D001CA679 /* AppDelegate.h */,
+				912323F420428D8D001CA679 /* AppDelegate.m */,
+				912323F620428D8D001CA679 /* ViewController.h */,
+				912323F720428D8D001CA679 /* ViewController.m */,
+				912323F920428D8D001CA679 /* Main.storyboard */,
+				912323FC20428D8E001CA679 /* Assets.xcassets */,
+				912323FE20428D8E001CA679 /* LaunchScreen.storyboard */,
+				9123240120428D8E001CA679 /* Info.plist */,
+				9123240220428D8E001CA679 /* main.m */,
+			);
+			path = DIS_UIAPP;
+			sourceTree = "<group>";
+		};
+		9198080320440AD600A4B973 /* PrivateFramework */ = {
+			isa = PBXGroup;
+			children = (
+				9198080420440AD600A4B973 /* AssertionServices */,
+				9198080E20440AD600A4B973 /* GraphicsServices */,
+				9198081D20440AD600A4B973 /* IOKit */,
+			);
+			path = PrivateFramework;
+			sourceTree = "<group>";
+		};
+		9198080420440AD600A4B973 /* AssertionServices */ = {
+			isa = PBXGroup;
+			children = (
+				9198080520440AD600A4B973 /* BKSApplicationStateMonitor.h */,
+				9198080620440AD600A4B973 /* BKSProcess.h */,
+				9198080720440AD600A4B973 /* BKSProcessAssertion.h */,
+				9198080820440AD600A4B973 /* BKSProcessAssertionClient.h */,
+				9198080920440AD600A4B973 /* BKSProcessAssertionCreateEvent.h */,
+				9198080A20440AD600A4B973 /* BKSProcessAssertionCreateResponseEvent.h */,
+				9198080B20440AD600A4B973 /* BKSProcessAssertionDestroyEvent.h */,
+				9198080C20440AD600A4B973 /* BKSProcessAssertionEvent.h */,
+				9198080D20440AD600A4B973 /* BKSProcessAssertionUpdateEvent.h */,
+			);
+			path = AssertionServices;
+			sourceTree = "<group>";
+		};
+		9198080E20440AD600A4B973 /* GraphicsServices */ = {
+			isa = PBXGroup;
+			children = (
+				9198080F20440AD600A4B973 /* GraphicsServices.h */,
+				9198081020440AD600A4B973 /* GSBase.h */,
+				9198081120440AD600A4B973 /* GSCapability.h */,
+				9198081220440AD600A4B973 /* GSColor.h */,
+				9198081320440AD600A4B973 /* GSEvent.h */,
+				9198081420440AD600A4B973 /* GSFont.h */,
+				9198081520440AD600A4B973 /* GSGeometry.h */,
+				9198081620440AD600A4B973 /* GSHeartbeat.h */,
+				9198081720440AD600A4B973 /* GSHiccup.h */,
+				9198081820440AD600A4B973 /* GSKeyboard.h */,
+				9198081920440AD600A4B973 /* GSMainScreen.h */,
+				9198081A20440AD600A4B973 /* GSMaps.h */,
+				9198081B20440AD600A4B973 /* GSStatusBar.h */,
+				9198081C20440AD600A4B973 /* GSWindow.h */,
+			);
+			path = GraphicsServices;
+			sourceTree = "<group>";
+		};
+		9198081D20440AD600A4B973 /* IOKit */ = {
+			isa = PBXGroup;
+			children = (
+				9198081E20440AD600A4B973 /* hid */,
+				9198082A20440AD600A4B973 /* IOKit.h */,
+				9198082B20440AD600A4B973 /* IOKitKeys.h */,
+				9198082C20440AD600A4B973 /* IOKitLib.h */,
+				9198082D20440AD600A4B973 /* IOReturn.h */,
+				9198082E20440AD600A4B973 /* IOTypes.h */,
+				9198082F20440AD600A4B973 /* OSKext.h */,
+				9198083020440AD600A4B973 /* OSMessageNotification.h */,
+			);
+			path = IOKit;
+			sourceTree = "<group>";
+		};
+		9198081E20440AD600A4B973 /* hid */ = {
+			isa = PBXGroup;
+			children = (
+				9198081F20440AD600A4B973 /* IOHIDDisplay.h */,
+				9198082020440AD600A4B973 /* IOHIDEvent.h */,
+				9198082120440AD600A4B973 /* IOHIDEventData.h */,
+				9198082220440AD600A4B973 /* IOHIDEventQueue.h */,
+				9198082320440AD600A4B973 /* IOHIDEventSystem.h */,
+				9198082420440AD600A4B973 /* IOHIDEventSystemClient.h */,
+				9198082520440AD600A4B973 /* IOHIDEventTypes.h */,
+				9198082620440AD600A4B973 /* IOHIDNotification.h */,
+				9198082720440AD600A4B973 /* IOHIDService.h */,
+				9198082820440AD600A4B973 /* IOHIDSession.h */,
+				9198082920440AD600A4B973 /* IOHIDUserDevice.h */,
+			);
+			path = hid;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		912323EF20428D8D001CA679 /* DIS_UIAPP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9123240620428D8E001CA679 /* Build configuration list for PBXNativeTarget "DIS_UIAPP" */;
+			buildPhases = (
+				912323EC20428D8D001CA679 /* Sources */,
+				912323ED20428D8D001CA679 /* Frameworks */,
+				912323EE20428D8D001CA679 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DIS_UIAPP;
+			productName = DIS_UIAPP;
+			productReference = 912323F020428D8D001CA679 /* DIS_UIAPP.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		912323E820428D8D001CA679 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = JK;
+				TargetAttributes = {
+					912323EF20428D8D001CA679 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 912323EB20428D8D001CA679 /* Build configuration list for PBXProject "DIS_UIAPP" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 912323E720428D8D001CA679;
+			productRefGroup = 912323F120428D8D001CA679 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				912323EF20428D8D001CA679 /* DIS_UIAPP */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		912323EE20428D8D001CA679 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9123240020428D8E001CA679 /* LaunchScreen.storyboard in Resources */,
+				912323FD20428D8E001CA679 /* Assets.xcassets in Resources */,
+				912323FB20428D8D001CA679 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		912323EC20428D8D001CA679 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				912323F820428D8D001CA679 /* ViewController.m in Sources */,
+				9123240B204297B4001CA679 /* DUIApplication.m in Sources */,
+				9123240320428D8E001CA679 /* main.m in Sources */,
+				912323F520428D8D001CA679 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		912323F920428D8D001CA679 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				912323FA20428D8D001CA679 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		912323FE20428D8E001CA679 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				912323FF20428D8E001CA679 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9123240420428D8E001CA679 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9123240520428D8E001CA679 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9123240720428D8E001CA679 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B5VVHWEWBM;
+				INFOPLIST_FILE = DIS_UIAPP/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seeme.DIS-UIAPP";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9123240820428D8E001CA679 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B5VVHWEWBM;
+				INFOPLIST_FILE = DIS_UIAPP/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seeme.DIS-UIAPP";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		912323EB20428D8D001CA679 /* Build configuration list for PBXProject "DIS_UIAPP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9123240420428D8E001CA679 /* Debug */,
+				9123240520428D8E001CA679 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9123240620428D8E001CA679 /* Build configuration list for PBXNativeTarget "DIS_UIAPP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9123240720428D8E001CA679 /* Debug */,
+				9123240820428D8E001CA679 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 912323E820428D8D001CA679 /* Project object */;
+}
