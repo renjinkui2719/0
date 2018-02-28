@@ -15,6 +15,8 @@
 		9123240320428D8E001CA679 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9123240220428D8E001CA679 /* main.m */; };
 		9123240B204297B4001CA679 /* DUIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 9123240A204297B4001CA679 /* DUIApplication.m */; };
 		912FACB020455D9E00FFE486 /* DUIEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 912FACAF20455D9E00FFE486 /* DUIEvent.m */; };
+		915469D72046A95C00FA33A7 /* DUIEventDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 915469D62046A95C00FA33A7 /* DUIEventDispatcher.m */; };
+		915469DA2046AF9000FA33A7 /* DUIEventFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 915469D92046AF9000FA33A7 /* DUIEventFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		9123240A204297B4001CA679 /* DUIApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DUIApplication.m; sourceTree = "<group>"; };
 		912FACAE20455D9E00FFE486 /* DUIEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUIEvent.h; sourceTree = "<group>"; };
 		912FACAF20455D9E00FFE486 /* DUIEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUIEvent.m; sourceTree = "<group>"; };
+		915469D52046A95C00FA33A7 /* DUIEventDispatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUIEventDispatcher.h; sourceTree = "<group>"; };
+		915469D62046A95C00FA33A7 /* DUIEventDispatcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DUIEventDispatcher.m; sourceTree = "<group>"; };
+		915469D82046AF9000FA33A7 /* DUIEventFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUIEventFetcher.h; sourceTree = "<group>"; };
+		915469D92046AF9000FA33A7 /* DUIEventFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DUIEventFetcher.m; sourceTree = "<group>"; };
 		9198080520440AD600A4B973 /* BKSApplicationStateMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSApplicationStateMonitor.h; sourceTree = "<group>"; };
 		9198080620440AD600A4B973 /* BKSProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSProcess.h; sourceTree = "<group>"; };
 		9198080720440AD600A4B973 /* BKSProcessAssertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSProcessAssertion.h; sourceTree = "<group>"; };
@@ -106,6 +112,10 @@
 			isa = PBXGroup;
 			children = (
 				912FACAD20455D9E00FFE486 /* Event */,
+				915469D52046A95C00FA33A7 /* DUIEventDispatcher.h */,
+				915469D62046A95C00FA33A7 /* DUIEventDispatcher.m */,
+				915469D82046AF9000FA33A7 /* DUIEventFetcher.h */,
+				915469D92046AF9000FA33A7 /* DUIEventFetcher.m */,
 				91232409204297B4001CA679 /* DUIApplication.h */,
 				9123240A204297B4001CA679 /* DUIApplication.m */,
 				9198080320440AD600A4B973 /* PrivateFramework */,
@@ -282,8 +292,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				915469D72046A95C00FA33A7 /* DUIEventDispatcher.m in Sources */,
 				912FACB020455D9E00FFE486 /* DUIEvent.m in Sources */,
 				912323F820428D8D001CA679 /* ViewController.m in Sources */,
+				915469DA2046AF9000FA33A7 /* DUIEventFetcher.m in Sources */,
 				9123240B204297B4001CA679 /* DUIApplication.m in Sources */,
 				9123240320428D8E001CA679 /* main.m in Sources */,
 				912323F520428D8D001CA679 /* AppDelegate.m in Sources */,

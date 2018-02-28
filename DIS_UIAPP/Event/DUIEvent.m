@@ -7,7 +7,7 @@
 //
 
 #import "DUIEvent.h"
-#import "GraphicsServices.h"
+#import "DUIApplication.h"
 
 @implementation DUIEvent
 
@@ -29,27 +29,27 @@
     return 0;
 }
 
-- (NSArray *)allTouches {
+- (NSSet <UITouch *> *)allTouches {
     return nil;
 }
 
-- (NSArray *)touchesForWindow:(UIWindow *)window {
+- (NSSet <UITouch *> *)touchesForWindow:(UIWindow *)window {
     return nil;
 }
 
-- (NSArray *)touchesForView:(UIWindow *)window {
+- (NSSet <UITouch *> *)touchesForView:(UIWindow *)window {
     return nil;
 }
 
-- (NSArray *)touchesForGestureRecognizer:(UIWindow *)window {
+- (NSSet <UITouch *> *)touchesForGestureRecognizer:(UIWindow *)window {
     return nil;
 }
 
-- (NSArray *)coalescedTouchesForTouch:(UITouch *)touch {
+- (NSArray <UITouch *> *)coalescedTouchesForTouch:(UITouch *)touch {
     return nil;
 }
 
-- (NSArray *)predictedTouchesForTouch:(UITouch *)touch {
+- (NSArray <UITouch *> *)predictedTouchesForTouch:(UITouch *)touch {
     return nil;
 }
 
@@ -88,7 +88,7 @@
     return _hidEvent;
 }
 
-- (NSArray *)_touchesForGestureRecognizer:(UIGestureRecognizer *)gr {
+- (NSSet <UITouch *> *)_touchesForGestureRecognizer:(UIGestureRecognizer *)gr {
     return nil;
 }
 
@@ -132,9 +132,58 @@
     return [super init];
 }
 
-- (id)_screen {
+- (UIScreen *)_screen {
+    if (_cachedScreen) {
+        return _cachedScreen;
+    }
+    
+    UIScreen *screen = _UIEventHIDUIScreenForHIDEvent([self _hidEvent]);
+    if (screen) {
+        return screen;
+    }
+    
+    screen = [UIScreen mainScreen];
+    return screen;
+}
+
+- (NSSet *)_windows {
+    UIWindow *keywindow = [UIApp _keyWindowForScreen:[self _screen]];
+    if (keywindow) {
+        return [NSSet setWithObject:keywindow];
+    }
     return nil;
 }
 
+- (void)_sendEventToResponder:(id)responder {
+    
+}
+
+- (void)_cleanupAfterDispatch {
+    
+}
+
+- (BOOL)isKeyDown {
+    return NO;
+}
+
+- (double)_wheelVelocity {
+    return 0;
+}
+
+- (NSArray *)_gestureRecognizersForWindow:(UIWindow *)window {
+    return nil;
+}
+
+- (double)timestamp {
+    return _timestamp;
+}
+
+- (void)_setTimestamp:(double)timestamp {
+    _timestamp = timestamp;
+}
+
+- (double)_initialTouchTimestamp {
+    return __initialTouchTimestamp;
+}
 
 @end

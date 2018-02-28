@@ -25,6 +25,11 @@ static BOOL __isInternalDevice_1;
 static dispatch_once_t __UIGetUIKitAlwaysSetsTransactionInputTimeAssumingInternal_onceToken;
 static BOOL __hasCachedUIKitAlwaysSetsTransactionInputTime;
 static BOOL __cachedUIKitAlwaysSetsTransactionInputTime;
+static BOOL __calledRunWithMainScene;
+static CFRunLoopObserverRef __beforeCARunLoopObserver;
+static CFRunLoopObserverRef __afterCARunLoopObserver;
+static CFRunLoopObserverRef __poolEnterRunLoopObserver;
+static CFRunLoopObserverRef __poolExitRunLoopObserver;
 
 void _UIApplicationHandleEvent(GSEventRef gsevent) {
     @autoreleasepool {
@@ -224,6 +229,50 @@ int DUIApplicationMain(int argc, char **  argv, NSString *  principalClassName, 
     return 0;
 }
 
+void _beforeCACommitHandler(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info) {
+    
+}
+
+void _afterCACommitHandler(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info) {
+    
+}
+
+void _installAfterCACommitHandler() {
+    CFRunLoopRef currentRunloop = CFRunLoopGetCurrent();
+    
+    if (!__beforeCARunLoopObserver) {
+        CFRunLoopObserverContext context = {
+            .version = NULL,
+            .info = self,
+            .retain = NULL,
+            .release = NULL,
+            .copyDescription = NULL
+        };
+        __beforeCARunLoopObserver = CFRunLoopObserverCreate(NULL, kCFRunLoopBeforeWaiting | kCFRunLoopExit /*0xA0*/, YES, 1999000, _beforeCACommitHandler, &context);
+        CFRunLoopAddObserver(currentRunloop, __beforeCARunLoopObserver, kCFRunLoopCommonModes);
+        
+        
+        __afterCARunLoopObserver = CFRunLoopObserverCreate(NULL, kCFRunLoopBeforeWaiting | kCFRunLoopExit /*0xA0*/, YES, 2001000, _afterCACommitHandler, &context);
+        CFRunLoopAddObserver(currentRunloop, __afterCARunLoopObserver, kCFRunLoopCommonModes);
+    }
+    //loc_237A3
+}
+
+void _wrapRunLoopWithAutoreleasePoolHandler(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info) {
+    if (activity == kCFRunLoopExit || activity == kCFRunLoopBeforeWaiting) {
+        //loc_22C81
+        CFIndex count = CFArrayGetCount(info);
+        id v = CFArrayGetValueAtIndex(info, CFIndex idx);
+        NSPopAutoreleasePool(v);
+        CFArrayRemoveValueAtIndex(info, CFIndex idx);
+        if (activity == kCFRunLoopBeforeWaiting) {
+            CFArrayAppendValue(info, NSPushAutoreleasePool(nil));
+        }
+    }
+    else if (activity == kCFRunLoopEntry){
+        CFArrayAppendValue(info, NSPushAutoreleasePool(nil));
+    }
+}
 
 @implementation DUIApplication
 
@@ -251,6 +300,97 @@ int DUIApplicationMain(int argc, char **  argv, NSString *  principalClassName, 
         if (_UIPressesContainsPressType(event.allPresses, 5) && !_applicationFlags.receivedUnhandledMenuButton) {
             [self _sendEventToGameControllerObserver:[event _hidEvent]];
         }
+    }
+}
+
+- (void)_run {
+    @autoreleasepool {
+        _UIAccessibilityInitialize();
+        
+        [self _registerForUserDefaultsChanges];
+        [self _registerForSignificantTimeChangeNotification];
+        [self _registerForLanguageChangedNotification];
+        [self _registerForLocaleWillChangeNotification];
+        [self _registerForLocaleChangedNotification];
+        [self _registerForAlertItemStateChangeNotification];
+        [self _registerForKeyBagLockStatusNotification];
+        [self _registerForNameLayerTreeNotification];
+        [self _registerForBackgroundRefreshStatusChangedNotification];
+        [self _registerForHangTracerEnabledStateChangedNotification];
+        
+        dispatch_once(&_UIApplicationIsExtension_once, ^{
+            //loc_2416A
+            //___block_literal_global_957
+        });
+        //loc_23FAE
+        if (!_UIApplicationIsExtension_result) {
+            UIStartMIGServer();
+        }
+        
+        //loc_23FBC
+        _installAfterCACommitHandler(self);
+        
+        [self _installAutoreleasePoolsIfNecessaryForMode:kCFRunLoopDefaultMode];
+        
+        [_eventDispatcher _installEventRunLoopSources:CFRunLoopGetMain()];
+        
+        if([self.class registerAsSystemApp] || [self isFrontBoard]) {
+            //loc_24030
+            _eventDispatcher._mainEnvironment._isSystemApplication = YES;
+            __calledRunWithMainScene = YES;
+        }
+        //loc_24072
+        else if([self.class _isSystemUIService]){
+            id identifier = [self.class _systemUIServiceIdentifier];
+            id settings = [self.class _systemUIServiceClientSettings];
+            [__workspace requestSceneCreationWithIdentifier:identifier initialClientSettings:settings completion:^{
+                //___block_literal_global_1004
+            }];
+        }
+        else {
+            //loc_24110
+            dispatch_once(&_UIApplicationIsExtension_once, ^{
+                //loc_24182
+                //___block_literal_global_957
+            });
+            if (_UIApplicationIsExtension_result && ![self.class _wantsApplicationBehaviorAsExtension]) {
+                __calledRunWithMainScene = YES;
+                [self __completeAndRunAsPlugin];
+            }
+        }
+        
+    }
+    
+    GSEventRun();
+}
+
+- (void)_installAutoreleasePoolsIfNecessaryForMode:(CFRunLoopMode)mode {
+    CFRunLoopRef currentRunloop = CFRunLoopGetCurrent();
+    
+    if (!__poolEnterRunLoopObserver) {
+        CFMutableArrayRef array = CFArrayCreateMutable(NULL, 0, NULL);
+        
+        CFRunLoopObserverContext context = {
+            .version = NULL,
+            .info = array,
+            .retain = CFRetain,
+            .release = CFRelease,
+            .copyDescription = CFCopyDescription
+        };
+        
+        __poolEnterRunLoopObserver = CFRunLoopObserverCreate(NULL, kCFRunLoopEntry, YES, INT64_MIN, _wrapRunLoopWithAutoreleasePoolHandler, &context);
+        __poolExitRunLoopObserver = CFRunLoopObserverCreate(NULL, kCFRunLoopBeforeWaiting | kCFRunLoopExit, YES, INT64_MIN, _wrapRunLoopWithAutoreleasePoolHandler, &context);
+        
+        CFRunLoopAddObserver(currentRunloop, __poolEnterRunLoopObserver, kCFRunLoopCommonModes);
+        CFRunLoopAddObserver(currentRunloop, __poolExitRunLoopObserver, kCFRunLoopCommonModes);
+        
+        CFRelease(array);
+    }
+    
+    //loc_22DE7
+    if (!CFRunLoopContainsObserver(currentRunloop, __poolEnterRunLoopObserver, mode)) {
+        CFRunLoopAddObserver(currentRunloop, __poolEnterRunLoopObserver, mode);
+        CFRunLoopAddObserver(currentRunloop, __poolExitRunLoopObserver, mode);
     }
 }
 
